@@ -130,7 +130,7 @@ export const projects: Project[] = [
   },
   {
     title: "Startup Investor Matching Platform",
-    category: "ML",
+    category: "ML/DS",
     summary: "Personalized search + learning-to-rank engine matching startups to investors.",
     problem: "Founders waste weeks finding the right investors; generic search doesn't capture fit.",
     approach:
@@ -144,7 +144,7 @@ export const projects: Project[] = [
   },
   {
     title: "Diabetes Risk Prediction (BRFSS CDC)",
-    category: "ML",
+    category: "ML/DS",
     summary: "Interpretable ML on imbalanced public health data with SHAP explanations.",
     problem: "Predicting diabetes risk on imbalanced BRFSS data while keeping decisions interpretable for clinicians.",
     approach:
@@ -195,7 +195,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tuberculosis Detection Portal",
-    category: "ML",
+    category: "ML/DS",
     summary: "Healthcare web portal predicting TB likelihood from symptoms.",
     problem: "Practitioners need a fast triage tool for TB risk based on symptom inputs.",
     approach: "Developed a healthcare portal where practitioners submit reports; a neural net predicts TB likelihood.",
