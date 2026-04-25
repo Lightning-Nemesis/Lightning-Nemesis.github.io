@@ -1,7 +1,7 @@
 export const profile = {
   name: "Amrit Mahajan",
   title: "Data Scientist & AI Engineer",
-  tagline: "Building production ML & GenAI systems used by 40M+ users.",
+  tagline: "Turning data and LLMs into measurable business impact — at 40M+ user scale.",
   email: "amrit.mahajan007@gmail.com",
   phone: "480-527-3622",
   location: "Tempe, AZ",
