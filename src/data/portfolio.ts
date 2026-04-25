@@ -75,7 +75,7 @@ export const experiences: Experience[] = [
   },
 ];
 
-export type ProjectCategory = "GenAI" | "ML" | "Cloud/MLOps" | "Research";
+export type ProjectCategory = "GenAI" | "ML/DS" | "Cloud/MLOps" | "Research";
 
 export type ProjectStat = { value: string; label: string };
 
