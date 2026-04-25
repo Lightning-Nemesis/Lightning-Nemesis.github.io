@@ -242,6 +242,21 @@ export const projects: Project[] = [
 
 export const skills = {
   Programming: ["Python", "SQL", "PySpark", "C++", "NumPy", "Pandas"],
+  "Data Science & Analytics": [
+    "A/B Testing & Experimentation",
+    "Causal Inference",
+    "Uplift Modeling",
+    "Hypothesis Testing",
+    "Cohort & Retention Analysis",
+    "Funnel & Conversion Analysis",
+    "Bayesian Methods",
+    "Advanced SQL",
+    "Stakeholder Communication",
+    "Product Analytics",
+    "Power BI",
+    "Tableau",
+    "Excel",
+  ],
   "AI / ML": [
     "Statistics",
     "Predictive Modeling",
@@ -268,7 +283,7 @@ export const skills = {
     "Streamlit",
     "Spark",
   ],
-  "Cloud & MLOps": ["AWS", "Databricks", "MLflow", "Docker", "Git", "Vector Databases", "Power BI", "Excel"],
+  "Cloud & MLOps": ["AWS", "Databricks", "MLflow", "Docker", "Git", "Vector Databases"],
 } as const;
 
 export const education = [
