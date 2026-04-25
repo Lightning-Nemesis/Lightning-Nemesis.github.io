@@ -139,9 +139,9 @@ export const Chess = () => {
               {topFormat.label} — All-time record
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
-              {topFormat.rec.win + topFormat.rec.loss + topFormat.rec.draw} games · why chess?
-              The same skills that make a good chess player — pattern recognition, evaluating
-              tradeoffs, and recovering from a bad position — are the ones I bring to ML systems.
+              Why chess? The same skills that make a good chess player — pattern recognition,
+              evaluating tradeoffs, and recovering from a bad position — are the ones I bring
+              to ML systems.
             </p>
             <a
               href={`https://www.chess.com/member/${profile.chessUsername}`}
