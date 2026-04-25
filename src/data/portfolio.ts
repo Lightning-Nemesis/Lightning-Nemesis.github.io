@@ -238,6 +238,47 @@ export const projects: Project[] = [
     ],
     tags: ["LLaMA 3B", "Fine-tuning", "STaR", "GSM8K", "Reasoning"],
   },
+  {
+    title: "Spatio-Temporal Grid Intelligence System",
+    category: "ML/DS",
+    summary:
+      "GNN + LSTM forecasting on a 132-bus IEEE distribution network with a live operator dashboard — APS AI for Energy Hackathon.",
+    problem:
+      "Utilities need accurate, bus-level load forecasts and stress-test tools to anticipate extreme events (heat domes, EV surges) on distribution grids without expensive retraining.",
+    approach:
+      "Built an end-to-end spatio-temporal pipeline: parsed OpenDSS topology for a 132-bus IEEE feeder, engineered 44 features across 5.7M rows, and trained a GNN + LSTM model. Added a physics-informed GNN + TFT variant with probabilistic quantile outputs, plus inference-only stress testing (heat dome +8°F, EV surge ×2.75) and a React decision dashboard translating model outputs into tiered operator actions.",
+    results: [
+      "MAE = 3kW across all 132 buses on held-out 2023 heat dome data.",
+      "Stress tests flagged 130/132 buses at thermal risk with zero retraining.",
+      "Live dashboard surfaces tiered operator actions across 132 feeders.",
+    ],
+    stats: [
+      { value: "3kW", label: "MAE (132 buses)" },
+      { value: "130/132", label: "At-Risk Buses" },
+    ],
+    tags: ["GNN", "LSTM", "PyTorch Geometric", "TFT", "OpenDSS", "React", "Physics-Informed"],
+  },
+  {
+    title: "Income Classification & Customer Segmentation",
+    category: "ML/DS",
+    summary:
+      "CatBoost classifier + K-Means segmentation on 200K+ U.S. Census records, with fairness audit and SHAP explainability.",
+    problem:
+      "Predict income on a severely imbalanced 200K+ Census dataset (94/6 split) and translate it into actionable customer segments — while ensuring fairness across sex and race subgroups.",
+    approach:
+      "Trained a CatBoost binary classifier with Bayesian hyperparameter tuning and threshold optimization. Built a segmentation pipeline using PCA and weighted K-Means. Conducted a Fairlearn fairness audit across sex and race subgroups and applied SHAP to validate the model's top income drivers.",
+    results: [
+      "PR-AUC 0.71 / ROC-AUC 0.96 on a 94/6 imbalanced split.",
+      "Threshold tuned to 0.34 — minority-class recall up by 13 points.",
+      "5 actionable customer segments with distinct income, employment & demographic profiles.",
+      "SHAP surfaced weeks worked, capital gains, and education rank as top drivers.",
+    ],
+    stats: [
+      { value: "0.96", label: "ROC-AUC" },
+      { value: "5", label: "Segments" },
+    ],
+    tags: ["CatBoost", "K-Means", "PCA", "SHAP", "Fairlearn", "Bayesian Tuning", "Imbalanced Data"],
+  },
 ];
 
 export const skills = {
