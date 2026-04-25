@@ -1,7 +1,7 @@
 export const profile = {
   name: "Amrit Mahajan",
   title: "Data Scientist & AI Engineer",
-  tagline: "Turning data and LLMs into measurable business impact — at 40M+ user scale.",
+  tagline: "Turning data and LLMs into measurable business impact at 40M+ user scale.",
   email: "amrit.mahajan007@gmail.com",
   phone: "480-527-3622",
   location: "Tempe, AZ",
@@ -133,8 +133,7 @@ export const projects: Project[] = [
     category: "ML/DS",
     summary: "Personalized search + learning-to-rank engine matching startups to investors.",
     problem: "Founders waste weeks finding the right investors; generic search doesn't capture fit.",
-    approach:
-      "Built a Flask-based recommendation system with personalized search and LambdaMART learning-to-rank.",
+    approach: "Built a Flask-based recommendation system with personalized search and LambdaMART learning-to-rank.",
     results: ["Reached NDCG@5 of 0.82 in test evaluations.", "End-to-end Flask app with API + UI."],
     stats: [
       { value: "0.82", label: "NDCG@5" },
@@ -365,19 +364,55 @@ export const education = [
 ];
 
 export const awards = [
-  { title: "Runner-up, Visual AI Hackathon by Voxel51", detail: "Built Hazard Zone Monitoring system using YOLOv8", date: "Feb 2025" },
+  {
+    title: "Runner-up, Visual AI Hackathon by Voxel51",
+    detail: "Built Hazard Zone Monitoring system using YOLOv8",
+    date: "Feb 2025",
+  },
   { title: "Outstanding Project Award", detail: "CSE 598 Data-Intensive Computing for ML, ASU", date: "2025" },
-  { title: "Dale Carnegie Program on Training Excellence", detail: "Communication, storytelling & leadership", date: "Mar 2024" },
-  { title: "Certified Trainer, Bajaj Finance", detail: "Delivered technical training to 60+ employees", date: "Mar 2024" },
+  {
+    title: "Dale Carnegie Program on Training Excellence",
+    detail: "Communication, storytelling & leadership",
+    date: "Mar 2024",
+  },
+  {
+    title: "Certified Trainer, Bajaj Finance",
+    detail: "Delivered technical training to 60+ employees",
+    date: "Mar 2024",
+  },
   { title: "HEROES Award, Bajaj Finance", detail: "Exceptional performance recognition", date: "Jan 2023" },
   { title: "Finalist, Code For Good Hackathon", detail: "JP Morgan Chase & Co.", date: "Jun 2022" },
 ];
 
 export const certifications = [
-  { title: "Generative AI with Large Language Models", issuer: "DeepLearning.AI", date: "Apr 2024", credId: "JERVRGRUZER4", url: "https://www.coursera.org/account/accomplishments/records/JERVRGRUZER4" },
-  { title: "MLOps Specialization", issuer: "DeepLearning.AI", date: "Jan 2024", credId: "2JN4FTUT6QMB", url: "https://www.coursera.org/account/accomplishments/specialization/2JN4FTUT6QMB" },
-  { title: "TensorFlow Developer Specialization", issuer: "DeepLearning.AI", date: "Mar 2023", credId: "WATFHCS2LETQ", url: "https://www.coursera.org/account/accomplishments/specialization/WATFHCS2LETQ" },
-  { title: "Deep Learning Specialization", issuer: "DeepLearning.AI", date: "Nov 2022", credId: "YSNAWL7SBKHF", url: "https://www.credly.com/badges/20f35d14-bd01-4879-a0a4-f751a64c958a/public_url" },
+  {
+    title: "Generative AI with Large Language Models",
+    issuer: "DeepLearning.AI",
+    date: "Apr 2024",
+    credId: "JERVRGRUZER4",
+    url: "https://www.coursera.org/account/accomplishments/records/JERVRGRUZER4",
+  },
+  {
+    title: "MLOps Specialization",
+    issuer: "DeepLearning.AI",
+    date: "Jan 2024",
+    credId: "2JN4FTUT6QMB",
+    url: "https://www.coursera.org/account/accomplishments/specialization/2JN4FTUT6QMB",
+  },
+  {
+    title: "TensorFlow Developer Specialization",
+    issuer: "DeepLearning.AI",
+    date: "Mar 2023",
+    credId: "WATFHCS2LETQ",
+    url: "https://www.coursera.org/account/accomplishments/specialization/WATFHCS2LETQ",
+  },
+  {
+    title: "Deep Learning Specialization",
+    issuer: "DeepLearning.AI",
+    date: "Nov 2022",
+    credId: "YSNAWL7SBKHF",
+    url: "https://www.credly.com/badges/20f35d14-bd01-4879-a0a4-f751a64c958a/public_url",
+  },
   { title: "AWS Cloud Practitioner", issuer: "Amazon Web Services", date: "Aug 2021", credId: "4LB73G6LJ114Q4W5" },
 ];
 
