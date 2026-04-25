@@ -7,7 +7,7 @@ export const profile = {
   location: "Tempe, AZ",
   linkedin: "https://linkedin.com/in/amrit-mahajan",
   github: "https://github.com/Lightning-Nemesis",
-  chessUsername: "Lightning-Nemesis",
+  chessUsername: "LighningNemesis",
   resumeUrl: "/resume.pdf",
   about: [
     "I'm a Data Scientist and AI Engineer with 2+ years of industry experience deploying ML systems at scale, currently pursuing my MS in Computer Science at Arizona State University with a 4.0 GPA.",
