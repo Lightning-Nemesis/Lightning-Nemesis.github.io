@@ -117,13 +117,6 @@ export const Chess = () => {
                   <p className="mt-1 font-mono text-[11px] text-muted-foreground">
                     Best {s.best?.rating ?? "—"} · Last played {formatDate(s.last.date)}
                   </p>
-                  {s.record && (
-                    <p className="mt-3 font-mono text-[11px]">
-                      <span className="text-accent">{s.record.win}W</span>{" · "}
-                      <span className="text-muted-foreground">{s.record.draw}D</span>{" · "}
-                      <span className="text-destructive">{s.record.loss}L</span>
-                    </p>
-                  )}
                 </>
               )}
             </div>
@@ -132,26 +125,22 @@ export const Chess = () => {
       </div>
 
       {topFormat?.rec && (
-        <div className="mt-6 flex flex-col items-center gap-4 rounded-lg border border-border bg-card p-6 sm:flex-row sm:items-center sm:gap-8">
-          <Donut win={topFormat.rec.win} loss={topFormat.rec.loss} draw={topFormat.rec.draw} />
-          <div className="text-center sm:text-left">
-            <p className="font-mono text-xs uppercase tracking-wider text-primary">
-              {topFormat.label} — All-time record
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Why chess? The same skills that make a good chess player — pattern recognition,
-              evaluating tradeoffs, and recovering from a bad position — are the ones I bring
-              to ML systems.
-            </p>
-            <a
-              href={`https://www.chess.com/member/${profile.chessUsername}`}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-flex items-center gap-1 font-mono text-xs text-primary hover:underline"
-            >
-              View profile <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
+        <div className="mt-6 rounded-lg border border-border bg-card p-6">
+          <p className="font-mono text-xs uppercase tracking-wider text-primary">
+            Why chess?
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            The same skills that make a good chess player — pattern recognition, evaluating
+            tradeoffs, and recovering from a bad position — are the ones I bring to ML systems.
+          </p>
+          <a
+            href={`https://www.chess.com/member/${profile.chessUsername}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3 inline-flex items-center gap-1 font-mono text-xs text-primary hover:underline"
+          >
+            View profile <ExternalLink className="h-3 w-3" />
+          </a>
         </div>
       )}
     </Section>
