@@ -75,6 +75,22 @@ export const Projects = () => {
               {p.title}
             </h3>
             <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{p.summary}</p>
+
+            {p.stats && p.stats.length > 0 && (
+              <div className="mt-4 grid grid-cols-2 gap-2 rounded-md border border-border/60 bg-background/40 p-3">
+                {p.stats.map((s) => (
+                  <div key={s.label} className="text-center">
+                    <div className="font-mono text-xl font-bold text-accent leading-none">
+                      {s.value}
+                    </div>
+                    <div className="mt-1 text-[10px] uppercase tracking-wider text-muted-foreground">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
             <div className="mt-4 flex flex-wrap gap-1">
               {p.tags.slice(0, 4).map((t) => (
                 <span
