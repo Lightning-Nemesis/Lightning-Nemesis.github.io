@@ -15,9 +15,11 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install        # 👈 changed from npm ci
+        run: npm install
       - name: Build
         run: npm run build
+      - name: Copy index.html to 404.html
+        run: cp ./dist/index.html ./dist/404.html   # 👈 add this
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
