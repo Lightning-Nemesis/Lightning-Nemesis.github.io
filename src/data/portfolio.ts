@@ -90,6 +90,7 @@ export type Project = {
   stats?: ProjectStat[];
   award?: string;
   link?: string;
+  github?: string;
 };
 
 export const projects: Project[] = [
