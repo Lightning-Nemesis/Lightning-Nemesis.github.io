@@ -105,6 +105,10 @@ export const projects: Project[] = [
       "Quantified correlation between language-token exposure, parallel data, and script effects vs. accuracy.",
       "Findings guide fairer LLM development across underrepresented languages.",
     ],
+    stats: [
+      { value: "100+", label: "Languages" },
+      { value: "5", label: "Reasoning Domains" },
+    ],
     tags: ["OLMo", "Multilingual", "Evaluation", "100+ Languages", "Translation Pipelines"],
   },
   {
@@ -118,6 +122,10 @@ export const projects: Project[] = [
       "Reduced manual analyst effort substantially.",
       "Classifies claims into supported / contradicted / unverifiable with citations.",
     ],
+    stats: [
+      { value: "3", label: "Model Stages" },
+      { value: "E2E", label: "Verification" },
+    ],
     tags: ["BERT", "NLI", "Web Scraping", "Semantic Similarity", "LLMs", "Python"],
   },
   {
@@ -128,6 +136,10 @@ export const projects: Project[] = [
     approach:
       "Built a Flask-based recommendation system with personalized search and LambdaMART learning-to-rank.",
     results: ["Reached NDCG@5 of 0.82 in test evaluations.", "End-to-end Flask app with API + UI."],
+    stats: [
+      { value: "0.82", label: "NDCG@5" },
+      { value: "L2R", label: "LambdaMART" },
+    ],
     tags: ["Flask", "LambdaMART", "Learning-to-Rank", "Recommender Systems", "Python"],
   },
   {
@@ -138,6 +150,10 @@ export const projects: Project[] = [
     approach:
       "Built LightGBM and Mixture-of-Experts models with SHAP-based interpretability for high-risk cohort analysis.",
     results: ["F1-score 0.64, recall 0.87 on imbalanced data.", "Transparent insights for high-risk subgroups."],
+    stats: [
+      { value: "0.87", label: "Recall" },
+      { value: "0.64", label: "F1-Score" },
+    ],
     tags: ["LightGBM", "Mixture of Experts", "SHAP", "Imbalanced Data", "Healthcare"],
   },
   {
@@ -151,6 +167,10 @@ export const projects: Project[] = [
       "100% accuracy on ~1,000 IDNet images.",
       "~4× faster query execution vs PyTorch baseline.",
       "Fairness analysis across gender, age, ethnicity.",
+    ],
+    stats: [
+      { value: "4×", label: "Faster Queries" },
+      { value: "100%", label: "Accuracy" },
     ],
     award: "Outstanding Project Award — CSE 598 Data-Intensive Computing for ML, ASU",
     tags: ["C++", "CNN", "Velox", "AWS EC2", "Docker", "SQL", "Fairness"],
@@ -167,6 +187,10 @@ export const projects: Project[] = [
       "Sub-1 second latency.",
       "Custom autoscaling from 0 → 15 instances on demand.",
     ],
+    stats: [
+      { value: "<1s", label: "Latency" },
+      { value: "0→15", label: "Autoscale" },
+    ],
     tags: ["AWS EC2", "SQS", "S3", "Lambda", "IoT Greengrass", "Autoscaling"],
   },
   {
@@ -176,6 +200,10 @@ export const projects: Project[] = [
     problem: "Practitioners need a fast triage tool for TB risk based on symptom inputs.",
     approach: "Developed a healthcare portal where practitioners submit reports; a neural net predicts TB likelihood.",
     results: ["Enables early detection through ML-based risk assessment.", "Simple submission → prediction workflow."],
+    stats: [
+      { value: "NN", label: "Neural Net" },
+      { value: "Web", label: "Triage Portal" },
+    ],
     tags: ["Neural Network", "Healthcare", "Web Portal", "Python"],
   },
   {
@@ -190,6 +218,10 @@ export const projects: Project[] = [
       "Supports dietary constraints (allergies, vegan, etc.).",
       "Privacy-preserving on-device inference.",
     ],
+    stats: [
+      { value: "E2E", label: "Auto Checkout" },
+      { value: "On-Device", label: "Privacy" },
+    ],
     tags: ["LLM Agents", "Knowledge Graphs", "BrowserUse", "Playwright", "Instacart API", "Open Food Facts"],
   },
   {
@@ -200,45 +232,43 @@ export const projects: Project[] = [
     approach:
       "Fine-tuned LLaMA 3B on a self-generated STaR reasoning dataset using iterative hint-based correction (97.9% quality).",
     results: ["Lifted GSM8K accuracy from 65.3% (zero-shot CoT) to 73.4%.", "Reusable STaR data-generation pipeline."],
+    stats: [
+      { value: "+8.1%", label: "GSM8K Lift" },
+      { value: "97.9%", label: "Data Quality" },
+    ],
     tags: ["LLaMA 3B", "Fine-tuning", "STaR", "GSM8K", "Reasoning"],
   },
 ];
 
-export const skillTabs = {
-  Generalist: {
-    Programming: ["Python", "SQL", "PySpark", "C++", "NumPy", "Pandas"],
-    "AI / ML": ["Statistics", "Predictive Modeling", "Time Series", "Deep Learning", "NLP", "LLMs", "MLOps"],
-    "Frameworks & Tools": ["Scikit-learn", "TensorFlow", "Databricks", "MLflow", "LangChain", "Power BI", "Excel"],
-  },
-  "Gen AI": {
-    Programming: ["Python", "SQL", "PySpark", "NumPy", "Pandas"],
-    "AI / ML": [
-      "Predictive Modeling",
-      "Deep Learning",
-      "NLP",
-      "LLMs",
-      "Prompt Engineering",
-      "Fine-tuning & Alignment",
-      "RAG",
-      "Agentic Workflows",
-      "LLM Evaluation & Safety",
-    ],
-    "Frameworks & Tools": [
-      "TensorFlow",
-      "Hugging Face",
-      "LangChain",
-      "Vector Databases",
-      "DeepEval",
-      "DSPy",
-      "Scikit-learn",
-      "Streamlit",
-    ],
-  },
-  MLE: {
-    Programming: ["Python", "SQL", "PySpark", "C++", "NumPy", "Pandas"],
-    "AI / ML": ["Statistics", "Predictive Modeling", "Time Series", "Deep Learning", "NLP", "LLMs", "MLOps"],
-    "Frameworks & Tools": ["Git", "Docker", "AWS", "Flask", "Streamlit", "Spark", "TensorFlow", "PyTorch", "MLflow"],
-  },
+export const skills = {
+  Programming: ["Python", "SQL", "PySpark", "C++", "NumPy", "Pandas"],
+  "AI / ML": [
+    "Statistics",
+    "Predictive Modeling",
+    "Time Series",
+    "Deep Learning",
+    "NLP",
+    "LLMs",
+    "MLOps",
+    "Prompt Engineering",
+    "Fine-tuning & Alignment",
+    "RAG",
+    "Agentic Workflows",
+    "LLM Evaluation & Safety",
+  ],
+  "Frameworks & Libraries": [
+    "TensorFlow",
+    "PyTorch",
+    "Scikit-learn",
+    "Hugging Face",
+    "LangChain",
+    "DeepEval",
+    "DSPy",
+    "Flask",
+    "Streamlit",
+    "Spark",
+  ],
+  "Cloud & MLOps": ["AWS", "Databricks", "MLflow", "Docker", "Git", "Vector Databases", "Power BI", "Excel"],
 } as const;
 
 export const education = [
