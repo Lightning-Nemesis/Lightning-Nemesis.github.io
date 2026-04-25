@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { Award, ExternalLink } from "lucide-react";
+import { Award, ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -167,12 +167,23 @@ export const Projects = () => {
                     ))}
                   </div>
                 </div>
-                {active.link && (
-                  <Button asChild variant="outline" className="font-mono">
-                    <a href={active.link} target="_blank" rel="noreferrer">
-                      View project <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </Button>
+                {(active.link || active.github) && (
+                  <div className="flex flex-wrap gap-2">
+                    {active.link && (
+                      <Button asChild variant="outline" className="font-mono">
+                        <a href={active.link} target="_blank" rel="noreferrer">
+                          View project <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    )}
+                    {active.github && (
+                      <Button asChild variant="outline" className="font-mono">
+                        <a href={active.github} target="_blank" rel="noreferrer" aria-label="View GitHub repository">
+                          <Github className="h-4 w-4" /> GitHub repo
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 )}
               </div>
             </>
