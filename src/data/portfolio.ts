@@ -111,6 +111,7 @@ export const projects: Project[] = [
       { value: "5", label: "Reasoning Domains" },
     ],
     tags: ["OLMo", "Multilingual", "Evaluation", "100+ Languages", "Translation Pipelines"],
+    github: "https://github.com/Lightning-Nemesis/multilingual-llm-benchmark",
   },
   {
     title: "Eco Guard — Sustainability Claims Verifier",
@@ -155,6 +156,7 @@ export const projects: Project[] = [
       { value: "0.64", label: "F1-Score" },
     ],
     tags: ["LightGBM", "Mixture of Experts", "SHAP", "Imbalanced Data", "Healthcare"],
+    github: "https://github.com/Lightning-Nemesis/Diabetes-Prediction-system",
   },
   {
     title: "Fraud Detection on Meta Velox",
@@ -237,6 +239,7 @@ export const projects: Project[] = [
       { value: "97.9%", label: "Data Quality" },
     ],
     tags: ["LLaMA 3B", "Fine-tuning", "STaR", "GSM8K", "Reasoning"],
+    github: "https://github.com/Lightning-Nemesis/star-gsm8k-reasoner",
   },
   {
     title: "Spatio-Temporal Grid Intelligence System",
@@ -257,6 +260,7 @@ export const projects: Project[] = [
       { value: "130/132", label: "At-Risk Buses" },
     ],
     tags: ["GNN", "LSTM", "PyTorch Geometric", "TFT", "OpenDSS", "React", "Physics-Informed"],
+    github: "https://github.com/Lightning-Nemesis/APS-AI-for-Energy",
   },
   {
     title: "Income Classification & Customer Segmentation",
@@ -278,6 +282,7 @@ export const projects: Project[] = [
       { value: "5", label: "Segments" },
     ],
     tags: ["CatBoost", "K-Means", "PCA", "SHAP", "Fairlearn", "Bayesian Tuning", "Imbalanced Data"],
+    github: "https://github.com/Lightning-Nemesis/income-data-classification-segmentation",
   },
 ];
 
