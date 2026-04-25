@@ -13,11 +13,11 @@ import {
 import { Section } from "./Section";
 import { Project, ProjectCategory, projects } from "@/data/portfolio";
 
-const CATEGORIES: ("All" | ProjectCategory)[] = ["All", "GenAI", "ML", "Cloud/MLOps", "Research"];
+const CATEGORIES: ("All" | ProjectCategory)[] = ["All", "GenAI", "ML/DS", "Cloud/MLOps", "Research"];
 
 const categoryColor: Record<ProjectCategory, string> = {
   GenAI: "bg-primary/15 text-primary border-primary/40",
-  ML: "bg-accent/15 text-accent border-accent/40",
+  "ML/DS": "bg-accent/15 text-accent border-accent/40",
   "Cloud/MLOps": "bg-purple-500/15 text-purple-300 border-purple-500/40",
   Research: "bg-orange-500/15 text-orange-300 border-orange-500/40",
 };

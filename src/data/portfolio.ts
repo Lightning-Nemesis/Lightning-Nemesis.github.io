@@ -75,7 +75,7 @@ export const experiences: Experience[] = [
   },
 ];
 
-export type ProjectCategory = "GenAI" | "ML" | "Cloud/MLOps" | "Research";
+export type ProjectCategory = "GenAI" | "ML/DS" | "Cloud/MLOps" | "Research";
 
 export type ProjectStat = { value: string; label: string };
 
@@ -130,7 +130,7 @@ export const projects: Project[] = [
   },
   {
     title: "Startup Investor Matching Platform",
-    category: "ML",
+    category: "ML/DS",
     summary: "Personalized search + learning-to-rank engine matching startups to investors.",
     problem: "Founders waste weeks finding the right investors; generic search doesn't capture fit.",
     approach:
@@ -144,7 +144,7 @@ export const projects: Project[] = [
   },
   {
     title: "Diabetes Risk Prediction (BRFSS CDC)",
-    category: "ML",
+    category: "ML/DS",
     summary: "Interpretable ML on imbalanced public health data with SHAP explanations.",
     problem: "Predicting diabetes risk on imbalanced BRFSS data while keeping decisions interpretable for clinicians.",
     approach:
@@ -195,7 +195,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tuberculosis Detection Portal",
-    category: "ML",
+    category: "ML/DS",
     summary: "Healthcare web portal predicting TB likelihood from symptoms.",
     problem: "Practitioners need a fast triage tool for TB risk based on symptom inputs.",
     approach: "Developed a healthcare portal where practitioners submit reports; a neural net predicts TB likelihood.",
@@ -237,6 +237,47 @@ export const projects: Project[] = [
       { value: "97.9%", label: "Data Quality" },
     ],
     tags: ["LLaMA 3B", "Fine-tuning", "STaR", "GSM8K", "Reasoning"],
+  },
+  {
+    title: "Spatio-Temporal Grid Intelligence System",
+    category: "ML/DS",
+    summary:
+      "End-to-end GNN + LSTM forecasting on a 132-bus IEEE distribution network with a live operator dashboard.",
+    problem:
+      "Utility operators need spatio-temporal load forecasts and stress-test tooling on distribution grids to anticipate thermal risk under climate and EV-adoption shocks.",
+    approach:
+      "Parsed OpenDSS topology, engineered 44 features across 5.7M rows, and trained a GNN + LSTM model on a 132-bus IEEE network. Added a physics-informed GNN + TFT variant with probabilistic quantile outputs. Designed inference-only stress tests (heat dome +8°F, EV surge ×2.75) and shipped a React decision dashboard translating outputs into tiered operator actions.",
+    results: [
+      "R² = 0.978 on held-out 2023 heat dome data.",
+      "Flagged 130/132 buses at thermal risk under stress tests with zero retraining.",
+      "Live decision dashboard across 132 feeders with tiered operator actions.",
+    ],
+    stats: [
+      { value: "0.978", label: "R² (Heat Dome)" },
+      { value: "130/132", label: "Buses Flagged" },
+    ],
+    award: "APS AI for Energy Hackathon",
+    tags: ["GNN", "LSTM", "PyTorch Geometric", "TFT", "OpenDSS", "React", "Physics-Informed ML"],
+  },
+  {
+    title: "Income Classification & Customer Segmentation",
+    category: "ML/DS",
+    summary:
+      "CatBoost classifier + PCA/K-Means segmentation on 200K+ U.S. Census records with fairness audit.",
+    problem:
+      "Predict income on a severely imbalanced (94/6) U.S. Census dataset and derive actionable customer segments for retail targeting — while validating fairness across sensitive subgroups.",
+    approach:
+      "Built a binary CatBoost classifier with Bayesian hyperparameter tuning on 200K+ records and tuned the decision threshold to 0.34. Engineered a PCA + weighted K-Means segmentation pipeline producing 5 customer segments. Ran a Fairlearn audit across sex and race, and used SHAP to validate top income drivers.",
+    results: [
+      "PR-AUC 0.71, ROC-AUC 0.96 on a 94/6 imbalanced split.",
+      "+13 pts minority-class recall via threshold optimization (0.34).",
+      "5 actionable segments; SHAP surfaced weeks worked, capital gains, education rank as top drivers.",
+    ],
+    stats: [
+      { value: "0.96", label: "ROC-AUC" },
+      { value: "+13 pts", label: "Minority Recall" },
+    ],
+    tags: ["CatBoost", "Bayesian Tuning", "PCA", "K-Means", "SHAP", "Fairlearn", "Segmentation"],
   },
 ];
 
