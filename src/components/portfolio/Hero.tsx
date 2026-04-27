@@ -99,7 +99,7 @@ export const Hero = () => {
               <dt className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
                 {s.label}
               </dt>
-              <dd className="mt-1 font-mono text-sm font-semibold text-foreground sm:text-base">
+              <dd className="mt-1 whitespace-pre-line font-mono text-sm font-semibold text-foreground sm:text-base">
                 {s.value}
               </dd>
             </div>
