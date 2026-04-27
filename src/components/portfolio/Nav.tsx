@@ -45,7 +45,7 @@ export const Nav = () => {
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </Button>
           <Button asChild size="sm" className="font-mono">
-            <a href={profile.resumeUrl} download>
+            <a href={profile.resumeUrl} download="Resume_Amrit_Mahajan.pdf">
               <Download className="h-4 w-4" /> Resume
             </a>
           </Button>
@@ -81,7 +81,7 @@ export const Nav = () => {
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </Button>
             <Button asChild size="sm" className="font-mono">
-              <a href={profile.resumeUrl} download>
+              <a href={profile.resumeUrl} download="Resume_Amrit_Mahajan.pdf">
                 <Download className="h-4 w-4" /> Resume
               </a>
             </Button>

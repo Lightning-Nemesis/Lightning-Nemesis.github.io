@@ -54,7 +54,7 @@ export const Hero = () => {
           className="mt-8 flex flex-wrap gap-3"
         >
           <Button asChild size="lg" className="font-mono shadow-glow">
-            <a href={profile.resumeUrl} download>
+            <a href={profile.resumeUrl} download="Resume_Amrit_Mahajan.pdf">
               <Download className="h-4 w-4" /> Download Resume
             </a>
           </Button>
