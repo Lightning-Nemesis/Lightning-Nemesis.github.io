@@ -19,7 +19,7 @@ export const profile = {
 export const heroStats = [
   { label: "MS CS @ ASU", value: "4.0 GPA" },
   { label: "Wells Fargo", value: "Gen AI Intern" },
-  { label: "Bajaj Finance", value: "40M+ users · +3.8% retention" },
+  { label: "Bajaj Finance", value: "Scale 40M+ app users\n+3.8% retention" },
 ];
 
 export type Experience = {
