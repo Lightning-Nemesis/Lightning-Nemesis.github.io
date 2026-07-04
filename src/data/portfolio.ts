@@ -31,7 +31,6 @@ export type Experience = {
   bullets: string[];
   tags: string[];
 };
-
 export const experiences: Experience[] = [
   {
     company: "Wells Fargo",
@@ -40,9 +39,9 @@ export const experiences: Experience[] = [
     start: "Jun 2025",
     end: "Aug 2025",
     bullets: [
-      "Built a POC Generative AI question-answering system on customer data, giving bankers context-aware insights and reducing client prep time by ~30% in pilot testing.",
-      "Researched and designed an LLM evaluation framework using LLM-as-a-judge (DeepEval) and DSPy, with reusable components to benchmark reliability, alignment, and safety.",
-      "Tested a hybrid RAG pipeline (BM25 + FAISS) that cut retrieval latency by ~85% by replacing long-context prompting with targeted chunk retrieval and smaller models.",
+      "Built a Generative AI question-answering system for bankers using enterprise customer data, enabling context-aware insights and reducing client preparation time by 30% in pilot testing.",
+      "Designed and tested a hybrid Retrieval Augmented Generation (RAG) pipeline using BM25 and FAISS to replace long-context prompting, reducing retrieval latency by 85% through targeted chunk retrieval and smaller-model inference.",
+      "Developed an LLM evaluation framework using DeepEval and DSPy to benchmark and optimize prompt engineering strategies, incorporating human-in-the-loop evaluation, LLM-as-a-judge, and adversarial testing to assess model reliability and safety.",
     ],
     tags: ["LLMs", "RAG", "BM25", "FAISS", "DeepEval", "DSPy", "LLM-as-Judge", "Python"],
   },
@@ -53,12 +52,17 @@ export const experiences: Experience[] = [
     start: "Jul 2022",
     end: "Jul 2024",
     bullets: [
-      "Led development and deployment of a Customer Churn Prediction model on the Bajaj Finserv App (40M+ users), driving a 3.8% retention lift through targeted strategies.",
-      "Built a Notification Recommendation Engine on clickstream data that boosted CTR by 25%, reducing manual campaign effort to zero across 40 business teams.",
-      "Pioneered MLOps adoption by implementing MLflow on Databricks, cutting manual deployment effort by 50% and standardizing A/B experimentation across 3+ teams.",
+       "Led development and deployment of a Churn Prediction model on the Bajaj Finserv App (40M+ users), using SHAP-based explainability to drive retention strategies that increased customer retention by 3.8%.",
+      "Built a Notification Recommendation Engine combining time-series clickstream data and a business rules engine, increasing CTR by 25% and eliminating manual campaign execution effort across 40 business teams.",
+      "Scaled experimentation from 20 to 120+ A/B tests per quarter by designing a self-serve testing framework in Python, cutting analyst review time by 65% and onboarding 25+ stakeholders.",
+      "Pioneered MLOps adoption by implementing MLflow in Databricks, reducing model deployment effort by 50%, standardizing experiment tracking, and driving adoption across 3 teams.",
+      "Reduced forecast error (MAPE) by 20% by developing LSTM models with attention mechanisms for long-range forecasting.",
+      "Built a Next Best Action Power BI dashboard for clickstream analysis on the app homepage to drive feature adoption, uncovering that ~50\% of users who logged out eventually uninstalled the app due to a specific app-version bug."
     ],
-    tags: ["Churn Modeling", "Recommender Systems", "MLflow", "Databricks", "A/B Testing", "PySpark", "Python"],
+    tags: ["Churn Modeling", "Recommender Systems", "Forecasting", "MLflow", "Databricks", "A/B Testing", "PySpark", "Python"],
   },
+
+
   {
     company: "Bajaj Finance Limited",
     role: "Data Science Intern",
@@ -66,11 +70,10 @@ export const experiences: Experience[] = [
     start: "Jan 2022",
     end: "Jul 2022",
     bullets: [
-      "Automated forecasting pipelines with Pandas and PySpark, cutting monthly reporting time for app metrics (MAU/DAU/traffic) from 5–6 days in Excel to 1 day.",
-      "Reduced forecast error (MAPE) by 20% by developing LSTM models with attention mechanisms.",
-      "Analyzed notification and uninstall patterns using interpretable tree-based models, informing governance changes that reduced notification costs and churn risk.",
+      "Built automated forecasting pipelines in Pandas and PySpark for app metrics (MAU, DAU, traffic, and net users), reducing monthly reporting time from 5–6 days in Excel to 1 day.",
+      "Segmented users by notification behavior using tree-based models, then partnered with the product team to translate findings into governance rules that reduced notification-driven churn risk.",
     ],
-    tags: ["LSTM", "Attention", "Time Series", "PySpark", "Pandas", "Tree Models"],
+    tags: ["Segmentation", "Time Series", "PySpark", "Pandas", "Tree Models"],
   },
 ];
 
