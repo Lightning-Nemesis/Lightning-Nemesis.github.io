@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
     start: "Jun 2025",
     end: "Aug 2025",
     bullets: [
-      "Built a Generative AI question-answering system for bankers using enterprise customer data, enabling context-aware insights and reducing client preparation time by 30% in pilot testing.",
+      "Built a Generative AI question-answering system for bankers using enterprise customer data.",
       "Designed and tested a hybrid Retrieval Augmented Generation (RAG) pipeline using BM25 and FAISS to replace long-context prompting, reducing retrieval latency by 85% through targeted chunk retrieval and smaller-model inference.",
       "Developed an LLM evaluation framework using DeepEval and DSPy to benchmark and optimize prompt engineering strategies, incorporating human-in-the-loop evaluation, LLM-as-a-judge, and adversarial testing to assess model reliability and safety.",
     ],
