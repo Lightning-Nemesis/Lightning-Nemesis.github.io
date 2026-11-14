@@ -148,6 +148,19 @@ export default function TwinPanel({ chat, name = person.name.split(' ')[0] }) {
           )}
         </div>
       </form>
+      <div className="tw-mode">
+        <span>Conversation mode</span>
+        <button
+          type="button"
+          role="switch"
+          aria-checked={chat.voice}
+          className={`tw-switch ${chat.voice ? 'is-on' : ''}`}
+          onClick={chat.toggleVoice}
+        >
+          <i />
+        </button>
+        <span>{chat.voice ? 'On' : 'Off'}</span>
+      </div>
     </div>
   );
 }

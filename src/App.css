@@ -1158,6 +1158,48 @@ main h2 {
   cursor: default;
 }
 
+.tw-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tw-switch {
+  position: relative;
+  width: 44px;
+  height: 22px;
+  padding: 0;
+  background: var(--key);
+  border: 2px solid var(--panel-line);
+}
+
+.tw-switch i {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background: var(--ink);
+  transition: transform 0.15s;
+}
+
+.tw-switch.is-on {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.tw-switch.is-on i {
+  background: var(--ground);
+  transform: translateX(22px);
+}
+
 /* ---------- immersive home candidates (shown in #/lab) ---------- */
 
 .cx {

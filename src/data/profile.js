@@ -239,17 +239,13 @@ export const skillGroups = {
   Programming: ['Python', 'SQL', 'PySpark', 'C++', 'NumPy', 'Pandas'],
   'Data Science & Analytics': [
     'A/B Testing & Experimentation',
-    'Causal Inference',
-    'Uplift Modeling',
     'Hypothesis Testing',
     'Cohort & Retention Analysis',
     'Funnel & Conversion Analysis',
-    'Bayesian Methods',
     'Advanced SQL',
     'Stakeholder Communication',
     'Product Analytics',
     'Power BI',
-    'Tableau',
     'Excel',
   ],
   'AI / ML': [
@@ -265,8 +261,6 @@ export const skillGroups = {
     'RAG',
     'Agentic Workflows',
     'LLM Evaluation & Safety',
-    'Structured Output (JSON Schema)',
-    'Logic Programming',
   ],
   'Frameworks & Libraries': [
     'TensorFlow',

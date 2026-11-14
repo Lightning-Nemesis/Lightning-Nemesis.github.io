@@ -13,7 +13,7 @@ test('shows the stack, awards and live Chess.com ratings', async () => {
     json: async () => ({ chess_rapid: mode(1276, 1439), chess_blitz: mode(1169, 1203), chess_bullet: mode(1128, 1203) }),
   });
   render(<SkillsPage />);
-  expect(screen.getByText('Uplift Modeling')).toBeInTheDocument();
+  expect(screen.getByText('Hypothesis Testing')).toBeInTheDocument();
   expect(screen.getByText(/Visual AI Hackathon/)).toBeInTheDocument();
   expect(await screen.findByText('1276')).toBeInTheDocument();
   expect(screen.getByText('Best 1439')).toBeInTheDocument();

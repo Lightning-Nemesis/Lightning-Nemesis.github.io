@@ -79,7 +79,7 @@ on this branch, unchanged. A copy is also on `backup/wip-redesign-ascii-twin-202
 | 7 | **Ask while it talks** | `useTwinChat.js` queue | New questions show as "(next)" and get answered in order; no more disabled chips |
 | 8 | **Human pace** | `pace.js` | A thinking pause first (longer for longer questions), then word-by-word reveal at about 20-25 characters a second, real pauses at commas and full stops, a "typing..." bounce between bubbles. About 2x slower than the old 18 ms typewriter |
 | 9 | **Voice-synced text** | `useTwinChat.js` speak effect | With conversation mode on, each bubble is spoken and words appear as they are said (`onboundary`) |
-| 10 | **Honest twin** | `identity` + `fallback` | "Are you real?" -> "I'm the AI version of Amrit..."; unknown questions -> "I'd rather not make things up" + a suggestion |
+| 10 | **Honest twin** | `identity` + `fallback` | "Are you real?" -> "I'm the AI version of Amrit..."; unknown questions -> "I'm in offline mode right now..." + what it can answer + the email |
 | 11 | **Conversation stays visible** | `TwinPanel.js` | Earlier turns stay above, dimmed; click anywhere on the answer to skip ahead |
 
 Facts still come only from `src/data/profile.js`. Wording that is hand-written (not generated from the data)

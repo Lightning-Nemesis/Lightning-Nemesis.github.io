@@ -146,7 +146,7 @@ const INTENTS = [
   },
   {
     id: 'roles',
-    match: /\broles?\b|looking for|open to|full[- ]time|position|hiring|sponsor|visa|work authori[sz]ation|relocat|start date|when can you start/i,
+    match: /\broles?\b|looking for|open to|full[- ]time|position|hiring|sponsor|visa|\bopt\b|\bcpt\b|h-?1b|green card|citizen|work permit|work authori[sz]ation|relocat|start date|when can you start/i,
     label: "what I'm looking for",
     topic: 'roles',
     say: () => [
@@ -258,6 +258,29 @@ const INTENTS = [
     },
   },
   {
+    id: 'leaving',
+    match: /why (did|have) you (leave|left|quit)|reason for leaving/i,
+    label: 'why I left',
+    topic: 'company',
+    say: ({ part }) =>
+      /wells/i.test(part)
+        ? ['Wells Fargo was a summer internship, so it ended with the program in August 2025.']
+        : ["I left Bajaj Finance in July 2024 to do my master's in computer science at ASU."],
+  },
+  {
+    id: 'research-results',
+    match: /(legal|research|cips|land[\s-]*dispute).*(results?|findings|outcomes?|paper|publish)|(results?|findings|paper|publish).*(legal|research|cips|land[\s-]*dispute)/i,
+    label: 'research results',
+    topic: 'company',
+    say: ({ ctx }) => {
+      ctx.company = experience[0].company;
+      return [
+        "It's early, so there are no results to share yet.",
+        "Right now I'm building the pipeline and benchmarking open-weight models.",
+      ];
+    },
+  },
+  {
     id: 'company',
     match: COMPANY_RE,
     label: 'that job',
@@ -353,7 +376,7 @@ const INTENTS = [
   },
   {
     id: 'location',
-    match: /where (are you|do you live)|based in|located|which city/i,
+    match: /where (exactly )?(are you|do you live)|based in|located|which city/i,
     label: "where I'm based",
     say: () => [`I'm in ${person.location}, and happy to relocate for the right role.`],
   },
@@ -439,16 +462,14 @@ export function splitQuestions(message) {
   return (out.length ? out : [message.trim()]).slice(0, 3);
 }
 
-function fallback({ rng, times }) {
-  const p = pick(featured, rng);
-  if (times) return ["That one's outside what I know too, sorry!", `Ask me about my projects (${p.title} is a good one), my work, or how to reach me.`];
-  return pick(
-    [
-      ["Hmm, I don't think I can answer that one well.", "I only know about my work, projects and background, and I'd rather not make things up.", `Want to hear about ${p.title} or what I'm working on now?`],
-      ["Ooh, that's outside what I know, sorry!", `Ask me about my projects (${p.title} is a good one), my work, or how to reach me.`],
-    ],
-    rng
-  );
+// Unknown questions: say plainly that this is the offline mode, so a visitor doesn't take the twin for a broken chatbot.
+function fallback({ times }) {
+  if (times) return ["That one's beyond my offline mode too, sorry!", `For anything I can't answer here, email the real me at ${person.email}.`];
+  return [
+    "I'm in offline mode right now, without the AI model behind me, so I can only answer a set list of questions.",
+    `Try my work experience, my projects (${featured[0].title} is a good one), my skills or what I'm working on now.`,
+    `For anything else, email the real me at ${person.email}.`,
+  ];
 }
 
 // history: [{ role: 'user'|'assistant', content, topic?, topics?, project?, company? }]

@@ -57,7 +57,18 @@ test('admits being an AI and does not invent unknown facts', () => {
   expect(respond('Are you a real person?', [], rng).text).toMatch(/AI version of Amrit/);
   const r = respond("What's your favorite pizza topping?", [], rng);
   expect(r.topic).toBe('fallback');
-  expect(r.text).toMatch(/rather not make things up|outside what I know/);
+  expect(r.text).toMatch(/offline mode.*set list of questions.*email the real me/s);
+  const again = respond('And your favorite movie?', [{ role: 'user', content: 'x' }, { role: 'assistant', content: r.text, topic: 'fallback' }], rng);
+  expect(again.text).toMatch(/beyond my offline mode too/);
+});
+
+test('probing questions get a direct, safe answer', () => {
+  expect(respond('What results did your legal AI research get?', [], rng).text).toMatch(/no results to share yet/);
+  expect(respond('Why did you leave Bajaj Finance?', [], rng).text).toMatch(/master's in computer science at ASU/);
+  expect(respond('Why did you leave Wells Fargo?', [], rng).text).toMatch(/summer internship/);
+  expect(respond('Where exactly do you live?', [], rng).text).toMatch(/Tempe, AZ/);
+  expect(respond('Are you on OPT or H1B?', [], rng).text).toMatch(/work authorization, email me/);
+  expect(respond('What is your expected salary?', [], rng).topic).toBe('fallback');
 });
 
 test('toBubbles keeps bubbles short', () => {
