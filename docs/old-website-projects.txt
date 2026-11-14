@@ -1,0 +1,247 @@
+Research
+Identifying LLM Performance Gaps Across Languages
+Research at ASU evaluating multilingual reasoning gaps in OLMo models across 100+ languages.
+
+Problem
+LLMs perform unevenly across languages and reasoning domains, but the structural causes (token exposure, parallel data, script effects) are poorly quantified.
+
+Approach
+Evaluated OLMo models across 100+ languages and 5 reasoning domains (Math, Reasoning, NLI, Common-sense, Healthcare) using high-quality translation pipelines, then correlated cross-lingual accuracy with pre/post-training data structure.
+
+Results
+Quantified correlation between language-token exposure, parallel data, and script effects vs. accuracy.
+Findings guide fairer LLM development across underrepresented languages.
+Stack
+OLMo
+Multilingual
+Evaluation
+100+ Languages
+Translation Pipelines
+    https://github.com/Lightning-Nemesis/multilingual-llm-benchmark
+
+
+GenAI
+Eco Guard — Sustainability Claims Verifier
+LLM pipeline that extracts and verifies corporate sustainability claims.
+
+Problem
+Verifying corporate ESG / sustainability claims is manual, slow, and error-prone.
+
+Approach
+Engineered an LLM-driven pipeline combining web scraping, BERT transformers, semantic similarity, and NLI models to extract, classify, and verify claims end-to-end.
+
+Results
+Reduced manual analyst effort substantially.
+Classifies claims into supported / contradicted / unverifiable with citations.
+Stack
+BERT
+NLI
+Web Scraping
+Semantic Similarity
+LLMs
+Python
+
+ML/DS
+Startup Investor Matching Platform
+Personalized search + learning-to-rank engine matching startups to investors.
+
+Problem
+Founders waste weeks finding the right investors; generic search doesn't capture fit.
+
+Approach
+Built a Flask-based recommendation system with personalized search and LambdaMART learning-to-rank.
+
+Results
+Reached NDCG@5 of 0.82 in test evaluations.
+End-to-end Flask app with API + UI.
+Stack
+Flask
+LambdaMART
+Learning-to-Rank
+Recommender Systems
+Python
+
+ML/DS
+Diabetes Risk Prediction (BRFSS CDC)
+Interpretable ML on imbalanced public health data with SHAP explanations.
+
+Problem
+Predicting diabetes risk on imbalanced BRFSS data while keeping decisions interpretable for clinicians.
+
+Approach
+Built LightGBM and Mixture-of-Experts models with SHAP-based interpretability for high-risk cohort analysis.
+
+Results
+F1-score 0.64, recall 0.87 on imbalanced data.
+Transparent insights for high-risk subgroups.
+Stack
+LightGBM
+Mixture of Experts
+SHAP
+Imbalanced Data
+Healthcare
+
+https://github.com/Lightning-Nemesis/Diabetes-Prediction-system
+
+Cloud/MLOps
+Award
+Fraud Detection on Meta Velox
+End-to-end fraud detection by integrating a CNN into Meta's Velox engine via custom C++ functions.
+
+🏆 Outstanding Project Award — CSE 598 Data-Intensive Computing for ML, ASU
+
+Problem
+Real-time SQL-based fraud inference requires low-latency model execution inside the query engine.
+
+Approach
+Integrated a CNN into Meta's Velox engine with custom C++ functions, enabling SQL-native inference. Deployed on AWS EC2 with Docker; benchmarked Velox vs PyTorch CPU/GPU.
+
+Results
+100% accuracy on ~1,000 IDNet images.
+~4× faster query execution vs PyTorch baseline.
+Fairness analysis across gender, age, ethnicity.
+Stack
+C++
+CNN
+Velox
+AWS EC2
+Docker
+SQL
+Fairness
+
+
+Cloud/MLOps
+AWS Face Recognition Pipeline
+Multi-tier face recognition system with custom autoscaling on AWS.
+
+Problem
+Process 100 concurrent face-recognition requests with sub-second latency on a budget.
+
+Approach
+Built a multi-tier pipeline using EC2 autoscaling, SQS, S3, Lambda, and IoT Greengrass with custom autoscaling logic.
+
+Results
+100% prediction accuracy across 100 concurrent requests.
+Sub-1 second latency.
+Custom autoscaling from 0 → 15 instances on demand.
+Stack
+AWS EC2
+SQS
+S3
+Lambda
+IoT Greengrass
+Autoscaling
+
+ML/DS
+Tuberculosis Detection Portal
+Healthcare web portal predicting TB likelihood from symptoms.
+
+Problem
+Practitioners need a fast triage tool for TB risk based on symptom inputs.
+
+Approach
+Developed a healthcare portal where practitioners submit reports; a neural net predicts TB likelihood.
+
+Results
+Enables early detection through ML-based risk assessment.
+Simple submission → prediction workflow.
+Stack
+Neural Network
+Healthcare
+Web Portal
+Python
+
+GenAI
+ClickLess AI — Autonomous Grocery Agent
+Conversational LLM agent that builds and checks out grocery carts autonomously.
+
+Problem
+Translating natural-language meal plans into a real grocery checkout is tedious and error-prone.
+
+Approach
+Built a conversational AI agent that converts language into checkout-ready carts using Instacart API, knowledge graphs, and LLM orchestration. Automated checkout via BrowserUse + Playwright. Integrated Open Food Facts for dietary constraints with privacy-preserving on-device inference.
+
+Results
+End-to-end autonomous checkout flow.
+Supports dietary constraints (allergies, vegan, etc.).
+Privacy-preserving on-device inference.
+Stack
+LLM Agents
+Knowledge Graphs
+BrowserUse
+Playwright
+Instacart API
+Open Food Facts
+
+GenAI
+STaR Reasoning with LLaMA 3B (GSM8K)
+Self-Taught Reasoning fine-tune of LLaMA 3B on GSM8K math problems.
+
+Problem
+Small LLMs struggle with multi-step math reasoning; training data with valid rationales is scarce.
+
+Approach
+Fine-tuned LLaMA 3B on a self-generated STaR reasoning dataset using iterative hint-based correction (97.9% quality).
+
+Results
+Lifted GSM8K accuracy from 65.3% (zero-shot CoT) to 73.4%.
+Reusable STaR data-generation pipeline.
+Stack
+LLaMA 3B
+Fine-tuning
+STaR
+GSM8K
+Reasoning
+GitHub repo
+https://github.com/Lightning-Nemesis/star-gsm8k-reasoner
+
+ML/DS
+Spatio-Temporal Grid Intelligence System
+GNN + LSTM forecasting on a 132-bus IEEE distribution network with a live operator dashboard — APS AI for Energy Hackathon.
+
+Problem
+Utilities need accurate, bus-level load forecasts and stress-test tools to anticipate extreme events (heat domes, EV surges) on distribution grids without expensive retraining.
+
+Approach
+Built an end-to-end spatio-temporal pipeline: parsed OpenDSS topology for a 132-bus IEEE feeder, engineered 44 features across 5.7M rows, and trained a GNN + LSTM model. Added a physics-informed GNN + TFT variant with probabilistic quantile outputs, plus inference-only stress testing (heat dome +8°F, EV surge ×2.75) and a React decision dashboard translating model outputs into tiered operator actions.
+
+Results
+MAE = 3kW across all 132 buses on held-out 2023 heat dome data.
+Stress tests flagged 130/132 buses at thermal risk with zero retraining.
+Live dashboard surfaces tiered operator actions across 132 feeders.
+Stack
+GNN
+LSTM
+PyTorch Geometric
+TFT
+OpenDSS
+React
+Physics-Informed
+https://github.com/Lightning-Nemesis/APS-AI-for-Energy
+
+ML/DS
+Income Classification & Customer Segmentation
+CatBoost classifier + K-Means segmentation on 200K+ U.S. Census records, with fairness audit and SHAP explainability.
+
+Problem
+Predict income on a severely imbalanced 200K+ Census dataset (94/6 split) and translate it into actionable customer segments — while ensuring fairness across sex and race subgroups.
+
+Approach
+Trained a CatBoost binary classifier with Bayesian hyperparameter tuning and threshold optimization. Built a segmentation pipeline using PCA and weighted K-Means. Conducted a Fairlearn fairness audit across sex and race subgroups and applied SHAP to validate the model's top income drivers.
+
+Results
+PR-AUC 0.71 / ROC-AUC 0.96 on a 94/6 imbalanced split.
+Threshold tuned to 0.34 — minority-class recall up by 13 points.
+5 actionable customer segments with distinct income, employment & demographic profiles.
+SHAP surfaced weeks worked, capital gains, and education rank as top drivers.
+Stack
+CatBoost
+K-Means
+PCA
+SHAP
+Fairlearn
+Bayesian Tuning
+Imbalanced Data
+GitHub repo
+
+https://github.com/Lightning-Nemesis/income-data-classification-segmentation
