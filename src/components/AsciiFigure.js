@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { toneMap } from './useMediaFrames';
+import { sampleFrame, toneMap } from './useMediaFrames';
 import { hexRgb, mixRgb } from './sceneConfig';
 
 // The twin as lit ASCII on a canvas. Unlike AsciiPortrait's fixed crop, the grid is fitted to his
@@ -137,8 +137,6 @@ export default function AsciiFigure({ video, poster, font = 'Fira Code', fps = 3
       const rows = Math.round(cols * aspect * (sh / sw));
       crop = { source, cols, rows, w, h, sx, sy, sw, sh };
       heat = new Float32Array(cols * rows);
-      sample.width = cols;
-      sample.height = rows;
       box.style.aspectRatio = `${cols * aspect} / ${rows}`;
       // a source that runs off the top of its frame fades out there instead of ending in a hard line
       box.classList.toggle('is-cut-top', s.y0 < 0.02);
@@ -158,8 +156,7 @@ export default function AsciiFigure({ video, poster, font = 'Fira Code', fps = 3
       const { cols, rows, sx, sy, sw, sh } = crop;
       const n = cols * rows;
 
-      sctx.drawImage(source, sx, sy, sw, sh, 0, 0, cols, rows);
-      const data = sctx.getImageData(0, 0, cols, rows).data;
+      const data = sampleFrame(sctx, source, sx, sy, sw, sh, cols, rows);
       const tone = toneMap(data, cols, rows);
 
       // distance (in cells) from each subject cell to the backdrop: drives the rim

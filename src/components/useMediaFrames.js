@@ -12,8 +12,6 @@ export default function useMediaFrames({ video, poster, cols, rows, aspect, zoom
   useEffect(() => {
     const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
     const canvas = document.createElement('canvas');
-    canvas.width = cols;
-    canvas.height = rows;
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     let raf;
     let last = 0;
@@ -45,8 +43,7 @@ export default function useMediaFrames({ video, poster, cols, rows, aspect, zoom
       }
       const sx = (w - sw) / 2;
       const sy = Math.max(0, Math.min(h - sh, h * focusY - sh / 2));
-      ctx.drawImage(source, sx, sy, sw, sh, 0, 0, cols, rows);
-      onFrameRef.current(ctx.getImageData(0, 0, cols, rows).data, {
+      onFrameRef.current(sampleFrame(ctx, source, sx, sy, sw, sh, cols, rows), {
         col: (fx) => Math.round(((fx * w - sx) / sw) * cols),
         row: (fy) => Math.round(((fy * h - sy) / sh) * rows),
       });
@@ -72,6 +69,44 @@ export default function useMediaFrames({ video, poster, cols, rows, aspect, zoom
       vid.load();
     };
   }, [video, poster, cols, rows, aspect, zoom, focusY, fps]);
+}
+
+const SS = 4; // each grid cell averages SS x SS samples of the source
+
+// The source rect scaled down to cols x rows, as RGBA. It is drawn SS times larger and averaged here:
+// a browser averages an <img> when shrinking it but reads only a few pixels per output pixel from a
+// <video> frame, which at ~11 source pixels per cell turns glasses and hair into speckle.
+export function sampleFrame(ctx, source, sx, sy, sw, sh, cols, rows) {
+  const W = cols * SS;
+  const H = rows * SS;
+  if (ctx.canvas.width !== W || ctx.canvas.height !== H) {
+    ctx.canvas.width = W;
+    ctx.canvas.height = H;
+  }
+  ctx.drawImage(source, sx, sy, sw, sh, 0, 0, W, H);
+  const src = ctx.getImageData(0, 0, W, H).data;
+  const out = new Uint8ClampedArray(cols * rows * 4);
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      let r = 0;
+      let g = 0;
+      let b = 0;
+      for (let j = 0; j < SS; j++) {
+        let p = ((y * SS + j) * W + x * SS) * 4;
+        for (let i = 0; i < SS; i++, p += 4) {
+          r += src[p];
+          g += src[p + 1];
+          b += src[p + 2];
+        }
+      }
+      const o = (y * cols + x) * 4;
+      out[o] = r / (SS * SS);
+      out[o + 1] = g / (SS * SS);
+      out[o + 2] = b / (SS * SS);
+      out[o + 3] = 255;
+    }
+  }
+  return out;
 }
 
 // Per-pixel luminance with auto-levels over the subject (the black backdrop is ignored), plus an
