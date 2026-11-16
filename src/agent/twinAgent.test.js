@@ -88,7 +88,7 @@ test('the three home-page questions have their own answers', () => {
   expect(roles.topic).toBe('roles');
   expect(roles.text).toMatch(/relocat/);
   expect(roles.text).toMatch(/work authorization/);
-  expect(respond('What can I try live?', [], rng).text).toMatch(/Nothing is hosted.*GitHub/s);
+  expect(respond('What can I try live?', [], rng).text).toMatch(/Shift Up is live.*GitHub/s);
   expect(respond('Have you won any hackathons?', [], rng).text).toMatch(/Voxel51/);
   expect(respond('Which project are you proudest of?', [], rng).topic).toBe('projects');
   expect(respond('How did you build this twin?', [], rng).topic).toBe('twin');

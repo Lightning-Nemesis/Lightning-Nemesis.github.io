@@ -40,7 +40,7 @@ const QUESTION_POOL = [
 
 const FOLLOWUPS_BY_TOPIC = {
   roles: ["What's your tech stack?", 'What did you do at Wells Fargo?', 'How do I reach you?'],
-  live: ['Tell me about Grocery Agent', 'Which project are you proudest of?', 'What roles are you looking for?'],
+  live: ['Tell me about Shift Up', 'Which project are you proudest of?', 'What roles are you looking for?'],
   twin: ['Tell me about Grocery Agent', "What's your tech stack?", 'What roles are you looking for?'],
   projects: ['Tell me more', 'Another project?', 'What did you do at Wells Fargo?'],
   project: ['Tell me more', 'Another project?', "What's your tech stack?"],
@@ -76,6 +76,7 @@ const firstPerson = (bullet) => `${ongoing(bullet) ? "I'm" : 'I'} ${lower1(bulle
 
 const featured = projects.filter((p) => p.featured);
 const byId = Object.fromEntries(projects.map((p) => [p.id, p]));
+const liveProject = projects.find((p) => p.links.some((l) => l.label === 'Live'));
 // a project is recognised by its title or its id ("grocery-agent" also matches "grocery agent")
 const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const projectRe = (p) =>
@@ -160,10 +161,10 @@ const INTENTS = [
     label: 'what you can try live',
     topic: 'live',
     say: ({ ctx }) => {
-      ctx.project = featured[0].id;
+      ctx.project = liveProject.id;
       return [
-        'Nothing is hosted live right now, to be honest.',
-        `The code for most of my projects is on GitHub though, and my Projects page links to each repo. ${featured[0].title} is a good one to start with.`,
+        `${liveProject.title} is live right now, and you can try it from the link on my Projects page.`,
+        "The rest aren't hosted, but the code for most of them is on GitHub, and my Projects page links to each repo.",
       ];
     },
   },

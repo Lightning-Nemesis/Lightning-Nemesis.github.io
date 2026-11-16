@@ -20,7 +20,7 @@ export const NOTES = [
   'Certifications: Generative AI with LLMs, ML Engineering for Production (MLOps) Specialization, TensorFlow Developer Professional Certificate, Deep Learning Specialization (DeepLearning.AI) and AWS Certified Cloud Practitioner.',
   "My favorite work has been on the job more than on the side. The one I'm proudest of is the churn model at Bajaj Finance: I led it from data to deployment on an app with 40M+ users, and it lifted retention by 3.8%. The GenAI question-answering tool at Wells Fargo is a close second.",
   'My favorite side project is Grocery Agent, a LangGraph agent that builds a diet-safe grocery cart and checks out by itself.',
-  'None of my projects are hosted as live demos. The code for most of them is on GitHub, linked from the Projects page.',
+  'Shift Up is the only project of mine that is hosted live; its link is on the Projects page. The others are not hosted, but the code for most of them is on GitHub, also linked from the Projects page.',
   "The Life page on my site still says it's coming soon.",
   'How this twin works, kept short: it is Claude, talking as me. A Cloudflare Worker gives it my profile and these notes and streams the reply back one message at a time, so it can hold a real conversation about almost anything, in my voice.',
 ];

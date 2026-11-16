@@ -151,6 +151,20 @@ export const projects = [
     links: [],
   },
   {
+    id: 'shift-up',
+    title: 'Shift Up',
+    subtitle: 'Bilingual voice coach · sunhacks 2026',
+    blurb:
+      'A voice interview coach for Spanish-speaking workers going for hourly jobs: the interview is in English and the help is in Spanish. Behind it, 3 Grok agents act as interviewer, feedback writer and coach, and Amazon Transcribe word timings measure hesitation and fillers, never accent. Feedback comes back in about 6 seconds, backed by 67 unit tests.',
+    category: 'genai',
+    tags: ['Next.js', 'Grok', 'Amazon Transcribe', 'Supermemory'],
+    thumb: 'shift-up.png',
+    links: [
+      { label: 'Live', url: 'https://myshiftup.us/' },
+      { label: 'GitHub', url: 'https://github.com/Lightning-Nemesis/ShiftUp' },
+    ],
+  },
+  {
     id: 'grid-forecasting',
     title: 'Spatio-Temporal Grid Forecasting',
     subtitle: 'APS AI for Energy Hackathon',
