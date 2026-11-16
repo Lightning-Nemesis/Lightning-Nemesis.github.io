@@ -139,6 +139,20 @@ export const projects = [
     links: [{ label: 'GitHub', url: 'https://github.com/Lightning-Nemesis/multilingual-llm-benchmark' }],
   },
   {
+    id: 'shift-up',
+    title: 'Shift Up',
+    subtitle: 'Bilingual voice coach · sunhacks 2026',
+    blurb:
+      "A voice interview coach for Spanish-speaking workers going for hourly jobs, with the interview in English and the help in Spanish. Amazon Polly speaks the questions (TTS), Amazon Transcribe turns each answer into timed words (STT), and 3 Grok agents interview, coach and give feedback on the content and delivery of every answer in about 6 seconds. Supermemory builds a memory graph of each learner's stories and weak spots, so the next session starts from what was hard.",
+    category: 'genai',
+    tags: ['Next.js', 'Grok', 'Amazon Polly', 'Amazon Transcribe', 'Supermemory'],
+    thumb: 'shift-up.png',
+    links: [
+      { label: 'Live', url: 'https://myshiftup.us/' },
+      { label: 'GitHub', url: 'https://github.com/Lightning-Nemesis/ShiftUp' },
+    ],
+  },
+  {
     id: 'fraud-detection',
     title: 'Fraud Detection System',
     subtitle: 'Outstanding Project Award · CSE 598, ASU',
@@ -149,20 +163,6 @@ export const projects = [
     featured: true,
     thumb: 'fraud-detection.png',
     links: [],
-  },
-  {
-    id: 'shift-up',
-    title: 'Shift Up',
-    subtitle: 'Bilingual voice coach · sunhacks 2026',
-    blurb:
-      'A voice interview coach for Spanish-speaking workers going for hourly jobs: the interview is in English and the help is in Spanish. Behind it, 3 Grok agents act as interviewer, feedback writer and coach, and Amazon Transcribe word timings measure hesitation and fillers, never accent. Feedback comes back in about 6 seconds, backed by 67 unit tests.',
-    category: 'genai',
-    tags: ['Next.js', 'Grok', 'Amazon Transcribe', 'Supermemory'],
-    thumb: 'shift-up.png',
-    links: [
-      { label: 'Live', url: 'https://myshiftup.us/' },
-      { label: 'GitHub', url: 'https://github.com/Lightning-Nemesis/ShiftUp' },
-    ],
   },
   {
     id: 'grid-forecasting',
