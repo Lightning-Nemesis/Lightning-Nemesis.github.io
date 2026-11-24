@@ -13,6 +13,7 @@ import VoicesPage from './pages/VoicesPage';
 import RadiusPage from './pages/RadiusPage';
 import { person } from './data/profile';
 import { THEME_IDS } from './components/sceneConfig';
+import { pageview } from './analytics';
 
 // Hash routing keeps GitHub Pages happy (no server rewrites needed).
 const routes = {
@@ -68,6 +69,10 @@ export default function App() {
   const path = useHashPath();
   const [theme, nextTheme] = useSiteTheme();
   const Page = routes[path] || HomePage;
+  const route = routes[path] ? path : '/';
+  useEffect(() => {
+    pageview(route);
+  }, [route]);
   return (
     <>
       <SiteHeader path={path} theme={theme} onTheme={nextTheme} />
